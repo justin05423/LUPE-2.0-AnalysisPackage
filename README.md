@@ -1,5 +1,20 @@
 # LUPE 2.0 Analysis Package
+<p align="center">
 LUPE-ASOiD powered pipeline with behavior analysis scripts.
+</p>
+![PyPI](https://img.shields.io/pypi/v/lupe-mice?label=pypi%20package)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/lupe-mice)
+
+<p align="center">
+<img src="lupe/images/logo.png" width="400">
+</p>
+
+Introducing LUPE, the innovative no code website predicting pain behavior in mice. 
+With our platform, you can input pose and classify mice behavior inside the LUPE Box. 
+LUPE can further summarize a composite pain score for mice behavior. 
+Best of all, LUPE runs without the need for a GPU. 
+With in-depth analysis and interactive visuals, as well as downloadable CSVs for easy integration into your existing workflow, 
+Try LUPE today and unlock a new level of insights into animal behavior.
 
 
 ### In a virtual env
