@@ -29,6 +29,7 @@ jupyter lab
 ### Project funding
 Collaboration between Corder Lab at University of Pennsylvania and 
 Yttri Lab from Carnegie Mellon. 
+
 Justin James actively develops and maintains this repository/cloud resource.
 - Prior Contributors: 
   - Alexander Hsu (Yttri Lab)
