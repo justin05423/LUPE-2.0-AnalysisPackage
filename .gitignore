@@ -3,3 +3,5 @@
 /model
 /model
 model/model.pkl
+/processed_dataset/lupe_capsaicin_morphine
+processed_dataset/.DS_Store

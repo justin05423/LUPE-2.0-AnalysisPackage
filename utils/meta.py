@@ -58,3 +58,5 @@ conditions_noci_morp_dreadd = ['EXP_CONFON', 'EXP_MORP', 'EXP_YFP']
 
 groups_bla_sni_opto_inhibit = ['SNI', 'NoSNI']
 conditions_bla_sni_opto_inhibit = ['CTRL_FLEX', 'EXP_stGtACR2_inhibit']
+groups_project_cso_capsaicin2ug = ['M1', 'M2', 'M3', 'M4']
+conditions_project_cso_capsaicin2ug = ['baseline', 'test_2ug']
