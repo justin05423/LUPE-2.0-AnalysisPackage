@@ -1,4 +1,4 @@
-Analysis Package
+# LUPE 2.0 Analysis Package
 
 <p align="center">
 <img src="menu/images/logo.png" width="400">
