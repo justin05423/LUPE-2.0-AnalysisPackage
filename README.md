@@ -1,4 +1,4 @@
-# LUPE 2.0 Analysis Package
+<img width="371" alt="image" src="https://github.com/user-attachments/assets/ef47b908-8b0a-419b-9888-7ca26f8acaa0"># LUPE 2.0 Analysis Package
 
 <p align="center">
 <img src="menu/images/logo.png" width="400">
@@ -27,8 +27,8 @@ jupyter lab
 
 
 ### Project funding
-Collaboration between Corder Lab at University of Pennsylvania and 
-Yttri Lab from Carnegie Mellon. 
+Collaboration between [Corder Lab](https://corderlab.com/) at University of Pennsylvania and 
+[Yttri Lab](https://labs.bio.cmu.edu/yttri/) from Carnegie Mellon. 
 
 Justin James actively develops and maintains this repository/cloud resource.
 - Prior Contributors: 
