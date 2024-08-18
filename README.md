@@ -1,4 +1,4 @@
-<img width="371" alt="image" src="https://github.com/user-attachments/assets/ef47b908-8b0a-419b-9888-7ca26f8acaa0"># LUPE 2.0 Analysis Package
+Analysis Package
 
 <p align="center">
 <img src="menu/images/logo.png" width="400">
