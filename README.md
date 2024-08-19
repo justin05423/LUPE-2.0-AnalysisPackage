@@ -7,8 +7,6 @@
 <p align="center">
 Introducing LUPE, the innovative analysis pipeline predicting pain behavior in mice. 
 With our platform, you can input pose and classify mice behavior inside the LUPE Box. 
-LUPE can further summarize a composite pain score for mice behavior. 
-Best of all, LUPE runs without the need for a GPU. 
 With in-depth analysis and interactive visuals, as well as downloadable CSVs for easy integration into your existing workflow, 
 Try LUPE today and unlock a new level of insights into animal behavior.
 </p>
