@@ -4,6 +4,7 @@ model/model.pkl
 **/__pycache__/
 **/.DS_Store/
 .gitattributes
+.venv/
 
 # Default ignored files
 /shelf/
