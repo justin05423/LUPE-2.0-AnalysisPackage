@@ -1,7 +1,15 @@
-
-/model
-/model
 /model
 model/model.pkl
 /processed_dataset/lupe_capsaicin_morphine
-processed_dataset/.DS_Store
+**/__pycache__/
+**/.DS_Store/
+.gitattributes
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
