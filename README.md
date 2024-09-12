@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ```commandline
 jupyter lab
 ```
-#### See [README-Analysis](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/manuscript_acc/README-Analysis.md) for instructions to run analysis and reproducing [manuscript_acc](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/tree/main/manuscript_acc) data. 
+#### See [README-Analysis](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/manuscript_acc/README-Analysis.md) for instructions to run analysis and reproducing [PRE-PRINT manuscript](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/tree/main/manuscript_acc)<sup>4</sup> data. 
 ---
 # Contacting
 
@@ -61,3 +61,4 @@ LUPE App is released under a Clear BSD License and is intended for research/acad
 1. [Mathis A, Mamidanna P, Cury KM, Abe T, Murthy VN, Mathis MW, Bethge M. DeepLabCut: markerless pose estimation of user-defined body parts with deep learning. Nat Neurosci. 2018 Sep;21(9):1281-1289. doi: 10.1038/s41593-018-0209-y. Epub 2018 Aug 20. PubMed PMID: 30127430.](https://www.nature.com/articles/s41593-018-0209-y)
 2. [Nath T, Mathis A, Chen AC, Patel A, Bethge M, Mathis MW. Using DeepLabCut for 3D markerless pose estimation across species and behaviors. Nat Protoc. 2019 Jul;14(7):2152-2176. doi: 10.1038/s41596-019-0176-0. Epub 2019 Jun 21. PubMed PMID: 31227823.](https://doi.org/10.1038/s41596-019-0176-0)
 3. [Tillmann JF, Hsu AI, Schwarz MK, Yttri EA. A-SOiD, an active-learning platform for expert-guided, data-efficient discovery of behavior. Nat Methods. 2024 Apr;21(4):703-711. doi: 10.1038/s41592-024-02200-1. Epub 2024 Feb 21. PMID: 38383746.](https://www.nature.com/articles/s41592-024-02200-1)
+4. [James, J. G., McCall, N. M., Hsu, A. I., Oswell, C. S., Salimando, G. J., Mahmood, M., ... & Corder, G. (2024). Mimicking opioid analgesia in cortical pain circuits. bioRxiv.](https://www.biorxiv.org/content/10.1101/2024.04.26.591113v1)
