@@ -1,9 +1,11 @@
 # Analysis Instructions
 
 ### LUPE Analysis Notebooks
-1. [Download model and dependencies and create IDE (i.e. within PyCharm).](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/README.md#installation-guide)
+1. Download [model and dependencies and create IDE (i.e. within PyCharm).](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/README.md#installation-guide)
 
 2. Run LUPE-DLC analysis on LUPE 2.0 Video Data (see sample video for demo).
+> **Note**: See [sample video data](https://upenn.box.com/s/niodmaqcfebiyd0dmnyfutq432co8k4m) for LUPE analysis demo.
+
 
 3. Beging LUPE-ASOiD analysis:
 
