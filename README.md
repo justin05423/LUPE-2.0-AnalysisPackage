@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ```commandline
 jupyter lab
 ```
-
+#### See [README-Analysis](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/manuscript_acc/README-Analysis.md) for instructions to run analysis and reproducing [manuscript_acc](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/tree/main/manuscript_acc) data. 
 ---
 # Contacting
 
