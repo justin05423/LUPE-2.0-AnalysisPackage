@@ -1,10 +1,19 @@
 # Analysis Instructions
 
 ### LUPE Analysis Notebooks
-1. 
+1. [Download model and dependencies and create IDE (i.e. within PyCharm).](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/README.md#installation-guide)
 
+2. Run LUPE-DLC analysis on LUPE 2.0 Video Data (see sample video for demo).
+
+3. Beging LUPE-ASOiD analysis:
+
+    1. Move files from ['template_copy-files-to-notebooks'](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/tree/main/notebooks/template_copy-files-to-notebooks) to your local notebooks folder.
+    2. Begin with pre-process files: a) 1_preprocess_data, b) 2_preprocess_get_features, c) 3_preprocess_get_behaviors
+  
+4. After pre-processing the dataset, follow instructions on the various coding notebooks in the folder to analyze your data.
 
 ---
+
 ### MATLAB - LUPE-Miniscope Behavior Analysis
 <details closed>
     <summary>Section 1: Read data CSVs into the structure oswell</summary>
