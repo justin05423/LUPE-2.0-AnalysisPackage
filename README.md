@@ -22,7 +22,7 @@ DeepLabCut<sup>1,2</sup> and A-SOiD<sup>3</sup> used to create LUPE-2.0 model fo
 - This package is supported for *Windows* and *Mac* but can be run on *Linux* computers given additional installation of require packages.
 
 #### Python Dependencies
-- For dependencies please refer to the requirements.txt file (model created and tested on python 3.11) No additional requirements.
+- For dependencies please refer to the requirements.txt file. Note that the model is created and tested on Python version 3.11.
 
 ---
 
@@ -47,15 +47,15 @@ Collaboration between [Corder Lab](https://corderlab.com/) at University of Penn
 [Yttri Lab](https://labs.bio.cmu.edu/yttri/) from Carnegie Mellon. 
 
 #### Contributors
-Justin James actively develops and maintains this repository/cloud resource.
-- Contributors: 
-  - Alexander Hsu (Yttri Lab)
+Justin James (Corder Lab) actively develops and maintains this repository/cloud resource.
+
+Other contributors include Alexander Hsu (Yttri Lab) and Maxx Yung (Corder Lab).
 
 
 ---
 
 # License
-LUPE App is released under a Clear BSD License and is intended for research/academic use only.
+LUPE is released under a Clear BSD License and is intended for research/academic use only.
 
 # References
 1. [Mathis A, Mamidanna P, Cury KM, Abe T, Murthy VN, Mathis MW, Bethge M. DeepLabCut: markerless pose estimation of user-defined body parts with deep learning. Nat Neurosci. 2018 Sep;21(9):1281-1289. doi: 10.1038/s41593-018-0209-y. Epub 2018 Aug 20. PubMed PMID: 30127430.](https://www.nature.com/articles/s41593-018-0209-y)

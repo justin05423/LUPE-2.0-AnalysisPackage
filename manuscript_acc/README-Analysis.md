@@ -7,7 +7,7 @@
 > **Note**: See [sample video data](https://upenn.box.com/s/niodmaqcfebiyd0dmnyfutq432co8k4m) for LUPE analysis demo.
 
 
-3. Beging LUPE-ASOiD analysis:
+3. Beginning LUPE-ASOiD analysis:
 
     1. Move files from ['template_copy-files-to-notebooks'](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/tree/main/notebooks/template_copy-files-to-notebooks) to your local notebooks folder.
     2. Begin with pre-process files: a) 1_preprocess_data, b) 2_preprocess_get_features, c) 3_preprocess_get_behaviors
