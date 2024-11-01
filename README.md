@@ -11,6 +11,8 @@ With in-depth analysis and interactive visuals, as well as downloadable CSVs for
 Try LUPE today and unlock a new level of insights into animal behavior.
 </p>
 
+![Annotated Vids](public/annotated_vids_all.gif)
+
 ---
 
 # System Requirements
