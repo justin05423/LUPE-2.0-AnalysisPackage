@@ -29,7 +29,7 @@ DeepLabCut<sup>1,2</sup> and A-SOiD<sup>3</sup> used to create LUPE-2.0 model fo
 ---
 
 # Installation Guide
-#### Download the LUPE 2.0 A-SOiD Model [HERE](https://upenn.box.com/s/vkdbktwn5krrinalyujapo7htg2ok5rc) and move the contents of the folder into this 'Model' folder.
+#### Download the LUPE 2.0 A-SOiD Model [HERE](https://upenn.box.com/s/9rfslrvcc7m6fji8bmgktnegghyu88b0) and move the contents of the folder into this 'Model' folder.
 > **Note**: Find the LUPE 2.0 DLC Model [HERE](https://upenn.box.com/s/av3i14c64rj6zls9lz6pda0it5b5q7f3) for analyzing pose estimation for LUPE video data.
 
 #### Access the analysis scripts: In a Virutal Environment IDE
