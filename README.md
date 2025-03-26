@@ -41,7 +41,14 @@ pip install -r requirements.txt
 jupyter lab
 ```
 #### See [README-Analysis](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/manuscript_acc/README-Analysis.md) for instructions to run analysis and reproducing [PRE-PRINT manuscript](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/tree/main/manuscript_acc)<sup>4</sup> data. 
+
 ---
+
+# Physical System Build
+For an overview on building the LUPE 2.0 System, check out the [Build](https://github.com/justin05423/LUPE-2.0-App/wiki/LUPE-2.0-Build-%F0%9F%9B%A0%EF%B8%8F-%F0%9F%A7%B0).
+
+---
+
 # Contacting
 
 #### Project Funding
