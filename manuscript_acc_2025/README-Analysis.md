@@ -1,6 +1,6 @@
 # Manuscript Analysis Instructions
 
-## LUPE Analysis Notebooks
+## LUPE Analysis Notebooks (for 1 LUPE Output)
 1. Download [model and dependencies and create IDE (i.e. within PyCharm)](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/README.md#installation-guide).
 
 2. To trial LUPE-DLC model on LUPE 2.0 Video Data (see sample video for demo).
@@ -15,7 +15,7 @@
 
 ---
 
-## LUPE-Miniscope Behavior Analysis -- Behavior State Model Output
+## LUPE-Miniscope Behavior Analysis (for 2 Behavior State Model Output)
 This repository contains multiple MATLAB scripts for generating, validating, and analyzing behavioral state models, neural data, and sensory responses. The code is organized into several scripts and sections. Click on the toggles below to view the details for each section.
   
   - **Overview:** This code produces the within-state behavior dynamics and simulations displayed in Figs. 2n, o and S9.
@@ -72,14 +72,7 @@ This script produces the **Markov-K-Means behavioral state model**. Models were 
 
 ## Script2_lickDynamicsInState.m
 **Description:**  
-Processes lick dynamics data.
-
-**Instructions:**  
-- Loads and downsamples the data.  
-- Generates sliding window transition matrices for different window lengths.  
-- Chooses the optimal number of clusters using the silhouette and elbow methods.  
-- Classifies states across animals and conditions.  
-- Exports state data and calculates a pain scale.
+Processes lick dynamics data. This code was used to preprocess all raw calcium and behavior label files. This is run with the capsaicin source data due to smaller experiment size. preprocessed data for SNI and uninjured mice are provided to skip straight to file 4. 
 
 <details>
   <summary><strong>Section 1:</strong> Load and downsample data</summary>
