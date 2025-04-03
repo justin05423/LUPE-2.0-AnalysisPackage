@@ -1,106 +1,243 @@
-# Analysis Instructions
+# Manuscript Analysis Instructions
 
-### LUPE Analysis Notebooks
-1. Download [model and dependencies and create IDE (i.e. within PyCharm).](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/README.md#installation-guide)
+## LUPE Analysis Notebooks (for 1 LUPE Output)
+1. Download [model and dependencies and create IDE (i.e. within PyCharm)](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/README.md#installation-guide).
 
-2. Run LUPE-DLC analysis on LUPE 2.0 Video Data (see sample video for demo).
+2. To trial LUPE-DLC model on LUPE 2.0 Video Data (see sample video for demo).
 > **Note**: See [sample video data](https://upenn.box.com/s/niodmaqcfebiyd0dmnyfutq432co8k4m) for LUPE analysis demo.
 
+3. Within GITHUB, all LUPE coding notebooks utilized for data analysis / figure generation are included. Due to limits on file size, please follow the link to access preprocess files (to run the analysis yourself) and outputs of the LUPE data (for you to look over): [BOX LINK](https://upenn.box.com/s/tmz7v7u73ymvvymi1hy7okc9brx5h7ko)  
 
-3. Beginning LUPE-ASOiD analysis:
-
-    1. Move files from ['template_copy-files-to-notebooks'](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/tree/main/notebooks/template_copy-files-to-notebooks) to your local notebooks folder.
-    2. Begin with pre-process files: a) 1_preprocess_data, b) 2_preprocess_get_features, c) 3_preprocess_get_behaviors
-  
 4. After pre-processing the dataset, follow instructions on the various coding notebooks in the folder to analyze your data.
+
+5. If you would like to analyze LUPE raw data from start to finish, feel free to download and use the dlc_csvs within the [Box Drive](https://upenn.box.com/s/tmz7v7u73ymvvymi1hy7okc9brx5h7ko).
+> **Note**: To analyze data seamlessly, use our [**LUPE 2.0 APP**](https://github.com/justin05423/LUPE-2.0-App)!
 
 ---
 
-### MATLAB - LUPE-Miniscope Behavior Analysis
-<details closed>
-    <summary>Section 1: Read data CSVs into the structure oswell</summary>
-   oswell.animals(a).sessions(s) – contains behavior, calcium, cell properties, and timing information in order of session.
-    The fields in sessions include:
-    behavior – raw, frame-by-frame LUPE output (categorical behavior classification)
-    calcium – deconvolved dF/F data
-    offset – seconds between calcium recording start and behavior recording start
-    props – Inscopix software-created spatial ROI data 
-    Other variables defined in this section:
-    nAnimals – number of animals
-    nSesh – number of sessions
-    dt – frame rate of calcium videos
-    dtB – frame rate of behavior videos
-    Behavior & session names and colors for plots
+## LUPE-Miniscope Behavior Analysis (for 2 Behavior State Model Output)
+This repository contains multiple MATLAB scripts for generating, validating, and analyzing behavioral state models, neural data, and sensory responses. The code is organized into several scripts and sections. Click on the toggles below to view the details for each section.
+  
+  - **Overview:** This code produces the within-state behavior dynamics and simulations displayed in Figs. 2n, o and S9.
+  - **Important:** Run the dataset of interest through Sections 1 and 4 of **Script1** first. **Do not clear your variables.**
+  - **Data Access:** Due to limits on file size, please follow the link to access the necessary source data files: [BOX LINK](https://upenn.box.com/s/et3vkipe18l4apoaz38bazkjujgxppr2)
+  - **Credits:** Sophie A. Rogers, Corder Lab, University of Pennsylvania, March 24, 2025.
+
+## Table of Contents
+
+- [Script1_GenerateValidateApply_BehavioralStateModel.m](#script1_generatevalidateapply_behavioralstatemodelm)
+- [Script2_lickDynamicsInState.m](#script2_lickdynamicsinstatem)
+- [Script3_preprocessNeuralDataAndLUPE.m](#script3_preprocessneuraldataandlupem)
+- [Script4_neuralDataAndLUPE_ReproduceFigs_2_3_S10_S13_S14.m](#script4_neuraldataandlupe_reproducefigs_2_3_s10_s13_s14m)
+- [Script5_sensoryPanels.m](#script5_sensorypanelsm)
+
+---
+
+## Script1_GenerateValidateApply_BehavioralStateModel.m
+**Description:**  
+This script produces the **Markov-K-Means behavioral state model**. Models were trained on data in `LUPE_statemodel_sourcedata.zip`.  
+**Instructions:** To generate models de novo, run the sections in order. To reproduce Figs. 1 and S7–S9, load your data of interest along with `stateModelClassifier.m`, then skip Section 3.
+
+<details>
+  <summary><strong>Section 1:</strong> Calculate within-state behavior dynamics and plot CDF (Reproduce Fig. S9c,e; Fig. 2o)</summary>
+  
+  Calculates the within-state behavior dynamics and plots the cumulative distribution function.
 </details>
 
-<details closed>
-    <summary>Section 2: Clean data (data for Fig. 2c)</summary>
-   Here, behavioral data is downsampled from dtB to dt and converted into a binary matrix, behMat, indicating frames (rows) of engagement (values) for each behavior (columns).
-    NaNs are replaced with zeros, and calcium data is z-scored.
-    Calcium data is stored in a cell activities of dimensions nSesh x nAnimals.
-    Behavior data is stored in a cell behMats of dimensions nSesh x 2 x nAnimals. Column 1 contains binary matrix, and column 2 contains the downsampled categorical array.
-    Size of data is stored.
+<details>
+  <summary><strong>Section 2:</strong> Plot within-state behavior dynamics as state progresses (Reproduce Fig. 2n, S9b)</summary>
+  
+  Creates plots to show how the behavior dynamics evolve over the state progression.
 </details>
 
-<details closed>
-    <summary>Section 3: Makes representative figure of neuron coefficients along principal components of neural activity</summary>
+<details>
+  <summary><strong>Section 3:</strong> KS test heatmaps (Reproduce Fig. 2o, S9d,f)</summary>
+  
+  Generates heatmaps based on Kolmogorov–Smirnov tests.
 </details>
 
-<details closed>
-    <summary>Section 4: Trains binomial GLMs on first 20PCs of ACC activity (data for Fig. 2g)</summary>
-    For non-shuffled (shuff==0) and temporally shuffled (shuff=1) data, establish Bonferroni-corrected p-value threshold alpha, an empty cell for neuron coefficients coeffs, and number of principal components to use for models nDims.
-    Then, for each animal and session, render calcium data nonnegative, and take its principal components. Store coefficients. 
-    For each behavior, skip if no behavior bouts, then loop through principal components and predict each binary behavior trace from all used principal components with binomial GLM. Calculate auROC. Save coefficients and p-values. Save indices of significant positively and negatively predictive PCs in a cell idx of size: nAnimals x nSessions x nBehaviors x 3 (for all, positively, and negatively predictive PCs respectively). Save significant coefficients in a tensor of nAnimals x nSessions x nBehaviors x 2 x 2. The fourth dimension represents real vs. shuffled data, while the fifth dimension represents positively and negatively predictive PCs respectively. Store fractions of predictive PCs in a matrix fracs of the same dimensions.
+<details>
+  <summary><strong>Section 4:</strong> Markov simulation (Reproduce Fig. S9b top)</summary>
+  
+  Runs a Markov simulation to reproduce the top portion of Fig. S9b.
 </details>
 
-<details closed>
-    <summary>Section 5: Collect highly weighted cells along significant PCs (data for Fig. 2h)</summary>
-   For each animal, session, behavior, and significantly behavior-predictive PCs, take the cells with PC coefficients of a magnitude greater than 2 z-score. Store in the cell encodingCells of size nAnimals x nSesh x nBehaviors.
+<details>
+  <summary><strong>Section 5:</strong> CDF and KS test for simulated State 4 behavior (Reproduce Fig. S9c top)</summary>
+  
+  Calculates the CDF and performs KS tests on the simulated behavior for State 4.
 </details>
 
-<details closed>
-    <summary>Section 6: Get peri-behavior time histograms</summary>
-   For each animal, session, and behavior, take the 20 frames before and after each bout onset for all neurons and the behavior itself.
-    Store PBTH neuron tensor of nBouts x nCells x nFrames in cell psthStore of size nAnimals x nSesh x nBehaviors. Store PBTH behavior matrix of nBouts x Frames in psthBehStore size nAnimals x nSesh x nBehaviors.
+---
+
+## Script2_lickDynamicsInState.m
+**Description:**  
+Processes lick dynamics data. This code was used to preprocess all raw calcium and behavior label files. This is run with the capsaicin source data due to smaller experiment size. preprocessed data for SNI and uninjured mice are provided to skip straight to file 4. 
+
+<details>
+  <summary><strong>Section 1:</strong> Load and downsample data</summary>
+  
+  Loads the raw data and applies downsampling.
 </details>
 
-<details closed>
-    <summary>Section 7: Create behavior PBTHs (reproduction, Fig. 2k)</summary>
-   For each behavior (right lick with almost no occurrences excluded), plot the average PBTH over all bouts in each session pooled across animals. Store mean area under the curve, standard deviation over bouts, and number of bouts for 0-1 seconds post-onset and 1-2 seconds post-onset in the tensor aucsBeh of size nSessions x nBehaviors x 6.
+<details>
+  <summary><strong>Section 2:</strong> Generate sliding window transition matrices and choose k</summary>
+  
+  Generates sliding window transition matrices for various window lengths and determines the optimal cluster number.
 </details>
 
-<details closed>
-    <summary>Section 8: Create behavior PBTHs (reproduction, Fig. 2l,m)</summary>
-   For each behavior and session, plot the average neural PBTH of positive and negative behavior-encoding neurons around behavior-onset, z-scored to baseline. Store positive behavior encoding neurons the cell encCell of size nAnimals x nSessions x nBehaviors x 2. Store the prevalence of these neurons in the tensor ratios of the same size.
-    Store mean, standard deviation, and sample size of neural activity in lick-encoding neurons 0-1 and 1-2 seconds after behavior-onset in positive and negative lick-encoding neurons in the tensor aucsActs of the same structure as aucsBeh, with additional fourth-dimensional columns for negative lick-encoding neurons.
+<details>
+  <summary><strong>Section 3:</strong> Generate transition matrices for desired window length and cluster for chosen k</summary>
+  
+  Produces transition matrices using the selected window length and clusters the data based on the chosen k.
 </details>
 
-<details closed>
-    <summary>Section 9: Make heatmaps of encoding neurons for pre-set behavior around every behavior in sessions of interest (reproduction, Fig. 2j)</summary>
-   Set behavior of interest  behOfInt (1 = still, 2 = walking, 3 = rearing, 4 = grooming, 5 = left-lick) to generate sorted heatmaps of each set of behavior-encoding neurons around onset of that behavior.
+<details>
+  <summary><strong>Section 4:</strong> Classify states in each animal and validate over conditions</summary>
+  
+  Classifies the states for each animal and validates the results under different conditions.
 </details>
 
-<details closed>
-    <summary>Section 10: Store means z-score of activities to generate behavioral tuning curves (data for Fig. 2m&o)</summary>
-  Store z-scores of neural activity in behavior-encoding neurons during each behavior in the cell storeActs of size nAnimals x nSesh x nBehaviors x nBehaviors x nDirections (positive vs. negative).
+<details>
+  <summary><strong>Section 5:</strong> Calculate and export state data for each animal</summary>
+  
+  Calculates state-specific data and exports the results for each animal.
 </details>
 
-<details closed>
-    <summary>Section 11: Calculate d’ for a given behavior compared to each other (data for Fig. 2p&q)</summary>
-Using the data in storeActs, calculate preference of each neuron for each behavior compared to each other. Store d’ values in cell dPrimes of size nBehaviors x nSesh x directions.
+<details>
+  <summary><strong>Section 6:</strong> Generate and calculate pain scale</summary>
+  
+  Computes a pain scale based on the processed data.
 </details>
 
-<details closed>
-    <summary>Section 12: 100 fold cross validated fisher decoder (reproduces Fig. 2e)</summary>
-    For each animal and session, randomly subsample data (shuffled and unshuffled) to represent same number of samples from each behavior and train Fisher decoder to discriminate each behavior. Train on 50% data test on 50%. Store confusion matrices in tensor conMat of size nAnimals x nSesh x nCrossValidations x nBehaviors x nBehaviors x 2 (shuffled and unshuffled). Run ttests between shuffled and unshuffled data.
+---
+
+## Script3_preprocessNeuralDataAndLUPE.m
+**Description:**  
+Preprocesses all raw calcium imaging and behavior label files. It is run with the capsaicin source data due to the smaller experiment size. Preprocessed data for SNI and uninjured mice are provided to allow you to skip directly to Script4.
+
+<details>
+  <summary><strong>Section 1:</strong> Load data</summary>
+  
+  Loads raw calcium and behavior data.
 </details>
 
-<details closed>
-    <summary>Section 13: Make the trace plot in Fig. 2h</summary>
+<details>
+  <summary><strong>Section 2:</strong> Clean calcium data, reorganize and downsample behavior data</summary>
+  
+  Cleans the calcium imaging data and reorganizes/downsamples the behavior data.
 </details>
 
-<details closed>
-    <summary>Section 14: Make spatial scatter plots (reproduces Fig. 2i)</summary>
-      Maps ROIs, colors positive behavior-encoding cells yellow and negative behavior-encoding cells blue.
+<details>
+  <summary><strong>Section 3:</strong> Collect peri-behavioral time histograms (Reproduce Fig. 2k)</summary>
+  
+  Collects peri-behavioral time histograms to reproduce Fig. 2k.
 </details>
 
+---
+
+## Script4_neuralDataAndLUPE_ReproduceFigs_2_3_S10_S13_S14.m
+**Description:**  
+Produces all source data and figures for neural data presented in Figs. 2, 3, S10, S13, and S14. Only one experimental group (Capsaicin, SNI, or Uninjured) can be run at a time.
+
+<details>
+  <summary><strong>Section 1:</strong> Load data</summary>
+  
+  Loads the neural data required for analysis.
+</details>
+
+<details>
+  <summary><strong>Section 2:</strong> Generate lick-probabilities for each animal</summary>
+  
+  Calculates the lick-probabilities for each animal.
+</details>
+
+<details>
+  <summary><strong>Section 3:</strong> Identify behavior probability-encoding principal components</summary>
+  
+  Identifies the principal components that encode behavior probability.
+</details>
+
+<details>
+  <summary><strong>Section 4:</strong> Identify positive- and negative- behavior encoding cells (Reproduce Fig. 2k, S13k,l)</summary>
+  
+  Detects cells with positive and negative behavior encoding.
+</details>
+
+<details>
+  <summary><strong>Section 5:</strong> Collect firing rates of behavior-encoding cells (Reproduce Fig. 2g, i, j; Fig. 3k)</summary>
+  
+  Collects the firing rate data of the identified behavior-encoding cells.
+</details>
+
+<details>
+  <summary><strong>Section 6:</strong> Collect behavior-evoked activity and selectivity (Reproduce Fig. 2l,m; 3g,h,i,j; S10f,l; S13i,j; S14)</summary>
+  
+  Gathers data on behavior-evoked activity and the selectivity of these cells.
+</details>
+
+<details>
+  <summary><strong>Section 7:</strong> Visualize behavior-evoked activity (heatmaps) (Reproduce Fig. S10e)</summary>
+  
+  Generates heatmaps to visualize the behavior-evoked neural activity.
+</details>
+
+<details>
+  <summary><strong>Section 8:</strong> Fisher decoder of behaviors (Reproduce Fig. 2e, S10g,h, S13a-d)</summary>
+  
+  Implements a Fisher decoder to analyze behavioral data.
+</details>
+
+<details>
+  <summary><strong>Section 9:</strong> Fisher decoder of states (Reproduce Fig. 2e, S10g,h, S13a-d)</summary>
+  
+  Implements a Fisher decoder to analyze state data.
+</details>
+
+<details>
+  <summary><strong>Section 10:</strong> Representative image in Fig. 2c</summary>
+  
+  Generates a representative image for Fig. 2c.
+</details>
+
+---
+
+## Script5_sensoryPanels.m
+**Description:**  
+Analyzes neural responses to sensory stimuli and reproduces Fig. S11. It can also be used to reproduce Fig. S12.
+
+<details>
+  <summary><strong>Section 1:</strong> Load data</summary>
+  
+  Loads the data related to sensory stimuli.
+</details>
+
+<details>
+  <summary><strong>Section 2:</strong> Calculate and plot PSTHs</summary>
+  
+  Calculates and plots Peri-Stimulus Time Histograms (PSTHs).
+</details>
+
+<details>
+  <summary><strong>Section 3:</strong> Identify significantly enhanced or inhibited cells</summary>
+  
+  Identifies cells that are significantly enhanced or inhibited in response to the stimuli.
+</details>
+
+<details>
+  <summary><strong>Section 4:</strong> Make heatmaps of neurons</summary>
+  
+  Creates heatmaps to visualize neuronal activity.
+</details>
+
+<details>
+  <summary><strong>Section 5:</strong> Calculate stimulus overlaps</summary>
+  
+  Calculates the overlaps between responses to different sensory stimuli.
+</details>
+
+<details>
+  <summary><strong>Section 6:</strong> Decode stimuli</summary>
+  
+  Applies decoding algorithms to classify the sensory stimuli.
+</details>
