@@ -11,6 +11,8 @@ With in-depth analysis and interactive visuals, as well as downloadable CSVs for
 Try LUPE today and unlock a new level of insights into animal behavior.
 </p>
 
+![Annotated Vids](public/annotated_vids_all.gif)
+
 ---
 
 # System Requirements
@@ -27,7 +29,7 @@ DeepLabCut<sup>1,2</sup> and A-SOiD<sup>3</sup> used to create LUPE-2.0 model fo
 ---
 
 # Installation Guide
-#### Download the LUPE 2.0 A-SOiD Model [HERE](https://upenn.box.com/s/vkdbktwn5krrinalyujapo7htg2ok5rc) and move the contents of the folder into this 'Model' folder.
+#### Download the LUPE 2.0 A-SOiD Model [HERE](https://upenn.box.com/s/9rfslrvcc7m6fji8bmgktnegghyu88b0) and move the contents of the folder into this 'Model' folder.
 > **Note**: Find the LUPE 2.0 DLC Model [HERE](https://upenn.box.com/s/av3i14c64rj6zls9lz6pda0it5b5q7f3) for analyzing pose estimation for LUPE video data.
 
 #### Access the analysis scripts: In a Virutal Environment IDE
@@ -39,7 +41,14 @@ pip install -r requirements.txt
 jupyter lab
 ```
 #### See [README-Analysis](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/blob/main/manuscript_acc/README-Analysis.md) for instructions to run analysis and reproducing [PRE-PRINT manuscript](https://github.com/justin05423/LUPE-2.0-AnalysisPackage/tree/main/manuscript_acc)<sup>4</sup> data. 
+
 ---
+
+# Physical System Build
+For an overview on building the LUPE 2.0 System, check out the [Build](https://github.com/justin05423/LUPE-2.0-App/wiki/LUPE-2.0-Build-%F0%9F%9B%A0%EF%B8%8F-%F0%9F%A7%B0).
+
+---
+
 # Contacting
 
 #### Project Funding
