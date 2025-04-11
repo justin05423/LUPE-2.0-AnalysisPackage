@@ -107,7 +107,7 @@ dt = 20; %sampling rate
 K_range = [1:20]; %k's to try
 
 
-for n=1:length(nSecs)
+for n=2%:length(nSecs)
     winSize = dt*nSecs(n); 
     winSlide = dt*toSlide(n); 
 
@@ -130,11 +130,11 @@ for n=1:length(nSecs)
 
             %for each behavior, find the fraction of times it switches to the
             %other behavior
-            for n=1:nBeh
+            for m=1:nBeh
                 for l = 1:nBeh
-                    idx = find(slice==n);
+                    idx = find(slice==m);
                     idx(idx == winSize) = [];
-                    T(n,l) = mean(slice(idx+1)==l);
+                    T(m,l) = mean(slice(idx+1)==l);
                 end
             end
             %unfold
@@ -160,7 +160,7 @@ for n=1:length(nSecs)
     for k_idx = 1:length(K_range)
         k = K_range(k_idx);
         tic
-        for r = 1:100
+        for r = 1:5
             disp([k_idx r])
             % Run K-means clustering
             [idx, ~, sumd] = kmeans(data, k);
@@ -183,18 +183,18 @@ for n=1:length(nSecs)
     figure
     % Plot K vs. Sum of Squared Distances (Inertia)
     subplot(2,4,n)
-    errorbar(K_range, mean(silhouette_values(:,:,n),2), std(silhouette_values(:,:,n),[],2)./sqrt(99), '-o');
+    errorbar(K_range, mean(silhouette_values(:,1:5,n),2), std(silhouette_values(:,1:5,n),[],2)./sqrt(99), '-o');
     xlabel('Number of Clusters (K)');
     ylabel('Sum of Squared Distances');
     title(strcat('Silhouette Method for Optimal K: ',num2str(nSecs),'s bins'))
 
     subplot(2,4,n+4)
-    errorbar(K_range, mean(sumd_values(:,:,n),2), std(sumd_values(:,:,n),[],2)./sqrt(99), '-o');
+    errorbar(K_range, mean(sumd_values(:,1:5,n),2), std(sumd_values(:,1:5,n),[],2)./sqrt(99), '-o');
     xlabel('Number of Clusters (K)');
     ylabel('Sum of Squared Distances');
     title(strcat('Elbow Method for Optimal K: ',num2str(nSecs),'s bins'))
 
-    nClusts(n,1) = find(mean(silhouette_values(:,:,n),2)==max(mean(silhouette_values(:,:,s),2)));
+    nClusts(n,1) = find(mean(silhouette_values(:,1:5,n),2)==max(mean(silhouette_values(:,1:5,s),2)));
 end
 
 %% Section 3: Generate transition matrices for desired window length and cluster for chosen k
@@ -226,6 +226,7 @@ for a=1:size(behDS,2)
 
     data = behDS(:,a)+1; %get rid of zeros
 
+    
     for t = 1:nWins
         %take a window of data
         slice = data(1+winSlide*(t-1):winSlide*(t-1)+winSize,:);
@@ -258,11 +259,12 @@ k = 6;
 
 %visualize state centroids. LOAD stateModelClassifier.m TO REPRODUCE STATE
 %MODEL FOR MANUSCRIPT
+
 behaviors = {'Still','Walk','Rear','Groom','Left Lick','Right Lick'};
 figure
 for m=1:k
     subplot(2,round(k/2),m)
-    data=reshape(squeeze(c(m,:,:)),k,k);
+    data=reshape(squeeze(c3(m,:,:)),k,k);
     data = log10(1000000.*data); %log transform scaled data to visualize states
     data(isnan(data)) = 0;
     data(isinf(data)) = 0;
@@ -437,15 +439,19 @@ for a=1:size(behDS,2)
         end
     toc
 end
+%%
 
+for a=59:78
+    anOrder{a} = strcat('Uninjured_',num2str(a-58),'_LUPE_0mgkg_morphine_nopain_male_or_female');
+end
 
 animalNames = cell(size(behDS,2),1);
 for a=1:length(animalNames)
     animalNames{a} = anOrder{a}(1:50);
 end
+%%
 
-
-dat = array2table(ditMeans','VariableNames', animalNames, 'RowNames',{'Model','No self-transition','No still', 'No walk','No rear','No groom','No left lick','No right lick','Shuffled'});
+dat = array2table(ditMeans(:,:,1)','VariableNames', animalNames, 'RowNames',{'Model','No self-transition','No still', 'No walk','No rear','No groom','No left lick','No right lick','Shuffled'});
 fileName = 'modelFit.csv';
 fullFilePath = fullfile(myDir, fileName);
 writetable(dat,fullFilePath)
@@ -520,3 +526,22 @@ legend({'Capsaicin','Formalin','SNI'})
 title('Projections')
 xlabel('PC1: Generalized behavior scale')
 ylabel('PC2: Pain behavior scale')
+
+
+%%
+data = [];
+for a=1:size(behDS,2)
+    data = [data; transUnfolded(:,:,a)];
+end
+for n=1:100
+    k = 6;
+    [I,c] = kmeans(data,k);
+    models(:,:,n) = c;
+    
+    distances = pdist2(c,c2); 
+    [d, idx] = min(distances, [], 2); % Find the nearest centroid
+    dists(n,:) = d;
+    
+    
+end
+
