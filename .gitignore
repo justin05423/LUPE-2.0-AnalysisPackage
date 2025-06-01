@@ -2856,3 +2856,63 @@ processed_dataset/LUPE-AMPS/behaviors_LUPE-AMPS/Model/Section2/Section1_output2.
 processed_dataset/LUPE-AMPS/behaviors_LUPE-AMPS/Model/.DS_Store
 processed_dataset/LUPE-AMPS/behaviors_LUPE-AMPS/.DS_Store
 processed_dataset/LUPE-AMPS/.DS_Store
+.DS_Store
+.idea/other.xml
+.idea/workspace.xml
+manuscript_acc_2025/.DS_Store
+manuscript_acc_2025/1 LUPE Output/.DS_Store
+manuscript_acc_2025/1 LUPE Output/Fig2/.DS_Store
+manuscript_acc_2025/2 Behavior State Model Output/.DS_Store
+manuscript_acc_2025/2 Behavior State Model Output/Code/.DS_Store
+notebooks/.DS_Store
+notebooks/behavior_kinematx.ipynb
+notebooks/last run/1_preprocess_data.ipynb
+notebooks/last run/2_preprocess_get_features.ipynb
+notebooks/last run/3_preprocess_get_behaviors.ipynb
+notebooks/last run/behavior_binned-ratio.ipynb
+notebooks/last run/behavior_distance-travaled-heatmaps.ipynb
+notebooks/last run/behavior_get-csv-classification.ipynb
+notebooks/last run/behavior_instance-counts.ipynb
+notebooks/last run/behavior_instance-durations.ipynb
+notebooks/last run/behavior_kinematx.ipynb
+notebooks/last run/behavior_location.ipynb
+notebooks/last run/behavior_timepoint-comparison.ipynb
+notebooks/last run/behavior_total-frames.ipynb
+notebooks/last run/behavior_transitions.ipynb
+notebooks/output/model_fit_by_condition_line.png
+notebooks/output/modelFit.csv
+notebooks/output/state_assignment_match_by_condition_line.png
+notebooks/output/stateAssignmentMatch.csv
+notebooks/template_copy-files-to-notebooks/motion_energy_with_pose.npy
+notebooks/working_behavior_sleep/.DS_Store
+notebooks/working_behavior_sleep/1_preprocess_data.ipynb
+notebooks/working_behavior_sleep/2_preprocess_get_features.ipynb
+notebooks/working_behavior_sleep/3_preprocess_get_behaviors.ipynb
+notebooks/working_behavior_sleep/behavior_get-csv-classification.ipynb
+notebooks/working_behavior_sleep/behavior_individual-mouse-screening.ipynb
+notebooks/working_behavior_sleep/behavior_kinematx.ipynb
+notebooks/working_behavior_sleep/behavior_sleep.ipynb
+notebooks/working_CaMiniscope/behavior_CaMiniscope.ipynb
+notebooks/working_CaMiniscope/behavior_miniscope.ipynb
+notebooks/working_CaMiniscope/behavior_miniscope_v1.ipynb
+notebooks/working_LUPEAMPS/.DS_Store
+notebooks/working_LUPEAMPS/1_preprocess_data.ipynb
+notebooks/working_LUPEAMPS/2_preprocess_get_features.ipynb
+notebooks/working_LUPEAMPS/3_preprocess_get_behaviors.ipynb
+notebooks/working_LUPEAMPS/behavior_get-csv-classification.ipynb
+notebooks/working_LUPEAMPS/behavior_LUPE-AMPS.ipynb
+notebooks/working_LUPEAMPS/model_LUPE-AMPS.ipynb
+processed_dataset/.DS_Store
+processed_dataset/demo_FormalinResponse/.DS_Store
+processed_dataset/demo_FormalinResponse/behaviors_demo_FormalinResponse.pkl
+processed_dataset/demo_FormalinResponse/binned_features_demo_FormalinResponse.pkl
+processed_dataset/demo_FormalinResponse/figures/.DS_Store
+processed_dataset/demo_FormalinResponse/raw_data_demo_FormalinResponse.pkl
+utils/meta.py
+manuscript_acc_2025/1 LUPE Output/.DS_Store
+manuscript_acc_2025/1 LUPE Output/Fig2/.DS_Store
+manuscript_acc_2025/2 Behavior State Model Output/.DS_Store
+manuscript_acc_2025/2 Behavior State Model Output/Code/.DS_Store
+notebooks/template_copy-files-to-notebooks/motion_energy_with_pose.npy
+processed_dataset/.DS_Store
+utils/meta.py
