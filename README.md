@@ -58,7 +58,7 @@ Collaboration between [Corder Lab](https://corderlab.com/) at University of Penn
 #### Contributors
 Justin James (Corder Lab) actively develops and maintains this repository/cloud resource.
 
-Other contributors include Alexander Hsu (Yttri Lab) and Maxx Yung (Corder Lab).
+Other contributors include Alexander Hsu (Yttri Lab).
 
 
 ---
