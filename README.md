@@ -1,6 +1,6 @@
 # LUPE 2.0 Analysis Package
 
-This package provides the core LUPE analysis pipeline for behavior analysis in Jupyter Notebooks.  
+> This package provides the core LUPE analysis pipeline for behavior analysis in Jupyter Notebooks.  
 It serves as a resource to run pose-based behavioral classification and downstream analysis with minimal setup.  
 
 > 💡 **Note:** If you would like to use LUPE with a graphical interface instead of coding, check out the [LUPE 2.0 App](https://github.com/justin05423/LUPE-2.0-App).  
