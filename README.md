@@ -1,5 +1,8 @@
 # LUPE 2.0 Analysis Package
 
+> 💡 **Looking to use LUPE with a graphical interface instead of coding?:** Check out the [LUPE 2.0 App](https://github.com/justin05423/LUPE-2.0-App).  
+This companion Streamlit application requires minimal coding experience and allows you to run LUPE through an interactive interface.
+
 <p align="center">
 <img src="public/logo.png" width="400">
 </p>
@@ -15,16 +18,38 @@ Try LUPE today and unlock a new level of insights into animal behavior.
 
 ---
 
-# System Requirements
-LUPE-2.0 Analysis Package requires only a standard computer with enough RAM to support the coding notebooks. 
+## Table of Contents
 
-DeepLabCut<sup>1,2</sup> and A-SOiD<sup>3</sup> used to create LUPE-2.0 model for pose estimation and behavior classification, respectively. Refer to GitHub of [DLC](https://github.com/DeepLabCut) or [A-SOiD](https://github.com/YttriLab/A-SOID) for further details. 
+- [System Requirements](#system-requirements)
+- [Installation Guide](#installation-guide)
+- [Physical System Build](#physical-system-build)
+- [Contacting](#contacting)
+
+---
+
+# System Requirements
+
+LUPE-2.0 Analysis Package requires only a standard computer with enough RAM to support the coding notebooks and analysis scripts.
+
+The LUPE-2.0 model uses:
+
+- [DeepLabCut](https://github.com/DeepLabCut)<sup>1,2</sup> for pose estimation.  
+- [A-SOiD](https://github.com/YttriLab/A-SOID)<sup>3</sup> for unsupervised behavior classification.  
+
+Refer to the respective GitHub repositories for additional technical documentation on these tools.
+
+> 💡 **Preferred Development Environment**  
+> LUPE 2.0 was developed and tested using the [PyCharm](https://www.jetbrains.com/pycharm/) IDE with a virtual environment created via [Anaconda](https://www.anaconda.com/).  
+> We **strongly recommend** using Anaconda to manage packages and avoid dependency conflicts. While JupyterLab or VS Code may work, PyCharm provides the most seamless integration for LUPE analysis workflows.
 
 #### OS Requirements
-- This package is supported for *Windows* and *Mac* but can be run on *Linux* computers given additional installation of require packages.
+
+- ✅ **Windows** – fully supported  
+- ✅ **macOS** – fully supported  
+- ⚠️ **Linux** – supported with manual installation of some additional packages
 
 #### Python Dependencies
-- For dependencies please refer to the requirements.txt file. Note that the model is created and tested on Python version 3.11.
+- LUPE was built and tested on **Python 3.11**
 
 ---
 
@@ -65,6 +90,8 @@ Other contributors include Alexander Hsu (Yttri Lab).
 
 # License
 LUPE is released under a Clear BSD License and is intended for research/academic use only.
+
+---
 
 # References
 1. [Mathis A, Mamidanna P, Cury KM, Abe T, Murthy VN, Mathis MW, Bethge M. DeepLabCut: markerless pose estimation of user-defined body parts with deep learning. Nat Neurosci. 2018 Sep;21(9):1281-1289. doi: 10.1038/s41593-018-0209-y. Epub 2018 Aug 20. PubMed PMID: 30127430.](https://www.nature.com/articles/s41593-018-0209-y)

@@ -26,7 +26,4 @@ keypoints = ["nose", "mouth", "l_forepaw", "l_forepaw_digit", "r_forepaw", "r_fo
 pixel_cm = 0.0330828
 
 groups = [f'Group{i}' for i in range(1, 100)]
-
-
 conditions = [f'Condition{i}' for i in range(1, 100)]
-
