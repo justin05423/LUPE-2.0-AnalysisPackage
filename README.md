@@ -18,6 +18,21 @@ Try LUPE today and unlock a new level of insights into animal behavior.
 
 ---
 
+## Table of Contents
+
+- [System Requirements](#system-requirements)
+  - [OS Requirements](#os-requirements)
+  - [Python Dependencies](#python-dependencies)
+- [Installation Guide](#installation-guide)
+- [Physical System Build](#physical-system-build)
+- [Contacting](#contacting)
+  - [Project Funding](#project-funding)
+  - [Contributors](#contributors)
+- [License](#license)
+- [References](#references)
+
+---
+
 # System Requirements
 LUPE-2.0 Analysis Package requires only a standard computer with enough RAM to support the coding notebooks. 
 
